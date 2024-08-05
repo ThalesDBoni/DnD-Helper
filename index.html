@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DND Sheet Generator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="/src/js/controller.js"></script>
+</head>
+<body>
+  <div class="page">
+    
+    <header>
+      <h1>DnD Helper</h1>
+    </header>
+    
+    <main>
+
+      <div class="instructions">
+        <h2 class="title">Instructions</h2>
+        <ol class="instructions-list">
+          <li>Choose your level, class and race.</li>
+          <li>Choose your archetype and subrace</li>
+          <li>Click at Generate</li>
+          <li>
+            Our system will automatically roll the 
+            dices and organize your character attributes/data for you
+          </li>
+        </ol>
+      </div>
+
+      <div class="sheet__infos-to-generate">
+        <h2 class="title">Character infos</h2>
+        <form class="character-infos-form">
+          <div class="sheet__info-all">
+            <div class="attribute-info sheet__info-level">
+              <label for="sheet-level">Level:</label>
+              <select class="level_selected" id="sheet-level">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+  
+            <div class="attribute-info sheet__info-class">
+              <label for="class-select">Class: </label>
+              <select class="class_selected" id="class-select">
+                <option disabled selected>Choose here</option>
+                <option value="barbarian">Barbarian</option>
+                <option value="bard">Bard</option>
+                <option value="cleric">Cleric</option>
+                <option value="druid">Druid</option>
+                <option value="fighter">Fighter</option>
+                <option value="monk">Monk</option>
+                <option value="paladin">Paladin</option>
+                <option value="ranger">Ranger</option>
+                <option value="rogue">Rogue</option>
+                <option value="sorcerer">Sorcerer</option>
+                <option value="warlock">Warlock</option>
+                <option value="wizard">Wizard</option>
+              </select>
+            </div>
+  
+            <div class="attribute-info sheet__info-race">
+              <label for="race-select">Race: </label>
+              <select class="race_selected" id="race-select">
+                <option disabled selected>Choose here</option>
+                <option value="alseid">Alseid</option>
+                <option value="catfolk">Catfolk</option>
+                <option value="darakhul">Darakhul</option>
+                <option value="derro">Derro</option>
+                <option value="dragonborn">Dragonborn</option>
+                <option value="drow">Drow</option>
+                <option value="dwarf">Dwarf</option>
+                <option value="elf">Elf</option>
+                <option value="erina">Erina</option>
+                <option value="gearforged">Gearforged</option>
+                <option value="gnome">Gnome</option>
+                <option value="half-elf">Half-Elf</option>
+                <option value="half-orc">Half-Orc</option>
+                <option value="halfling">Halfling</option>
+                <option value="human">Human</option>
+                <option value="minotaur">Minotaur</option>
+                <option value="mushroomfolk">Mushroomfolk</option>
+                <option value="satarre">Satare</option>
+                <option value="shade">Shade</option>
+                <option value="shade">Tiefling</option>
+              </select>
+            </div>
+
+            <div class="attribute-info sheet__info-archetype">
+              <label for="archetype-select">Archetype: </label>
+              <select class="archetype_selected" id="archetype-select">
+                <option disabled selected>Choose a class</option>
+                
+              </select>
+            </div>
+
+            <div class="attribute-info sheet__info-subrace">
+              <label for="subrace-select">Subrace: </label>
+              <select class="subrace_selected" id="subrace-select">
+                <option disabled selected>Choose a race</option>
+                
+              </select>
+            </div>
+          </div>
+        </form>
+        
+        <div class="button">
+          <button>Generate</button>
+        </div>
+
+      </div>
+
+      <div class="sheet__data">
+        <h2 class="title">Sheet</h2>
+        <div class="data">
+          <div class="attributes">
+            <div class="att">
+              <span><b>Strength: </b></span>
+              <span class="sheet__data-strength"> -- </span>
+              <div><b>Mod:</b> <span class="sheet__data-strength-mod"></span></div>
+            </div>
+            <div class="att">
+              <span><b>Dexterity: </b></span>
+              <span class="sheet__data-dexterity"> -- </span>
+              <div><b>Mod:</b><span class="sheet__data-dexterity-mod"></span></div>
+            </div>
+            <div class="att">
+              <span><b>Constitution: </b></span>
+              <span class="sheet__data-constitution"> -- </span>
+              <div><b>Mod:</b><span class="sheet__data-constitution-mod"></span></div>
+            </div>
+            <div class="att">
+              <span><b>Intelligence: </b></span>
+              <span class="sheet__data-intelligence"> -- </span>
+              <div><b>Mod:</b><span class="sheet__data-intelligence-mod"></span></div>
+            </div>
+            <div class="att">
+              <span><b>Wisdom: </b></span>
+              <span class="sheet__data-wisdom"> -- </span>
+              <div><b>Mod:</b><span class="sheet__data-wisdom-mod"></span></div>
+            </div>
+            <div class="att">
+              <span><b>Charisma: </b></span>
+              <span class="sheet__data-charisma"> -- </span>
+              <div><b> Mod:</b><span class="sheet__data-charisma-mod"></span></div>
+            </div>
+          </div>
+  
+          <div class="all">
+            <div>
+              <span><b>CA:</b></span>
+              <span class="ca"></span>
+            </div>
+    
+            <div>
+              <span><b>Life:</b></span>
+              <span class="life"></span>
+            </div>
+    
+            <div>
+              <span><b>Initiative:</b></span>
+              <span class="initiative"></span>
+            </div>
+    
+            <div>
+              <span><b>Proficience Bonus:</b></span>
+              <span class="bonus-prof"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sheet__race-and-sub">
+        <h2 class="title">Race</h2>
+        
+        <div class="sheet__race">
+        </div>
+
+        <div class="sheet_subrace">
+        </div>
+      </div>
+
+      <h2 class="title">Class</h2>
+      
+      <div class="class">
+      </div>
+      
+      <div class="archetypes">
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>
