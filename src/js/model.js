@@ -77,7 +77,7 @@ export async function getDataCharactersInfo() {
 
 export async function getDataClass() {
   try {
-    if (state.characterInfos.characterClass === 'Choose here') {
+    if (state.characterInfos.characterClass === 'Select class') {
       throw new Error('You should select a class! 👍')
     }
 
@@ -93,7 +93,7 @@ export async function getDataClass() {
 
 export async function getDataRace() {
   try {
-    if (state.characterInfos.characterRace === 'Choose here') {
+    if (state.characterInfos.characterRace === 'Select race') {
       throw new Error('You should select a race! 👍')
     }
 
