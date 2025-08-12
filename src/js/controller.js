@@ -21,6 +21,7 @@ async function controlGenerator() {
   model.updateStateModifiers()
   model.updateSheetInfo()
   console.log(model.state)
+  
   // Render
   sheetAttributesView.displayAttributes(model.state.characterInfos.attributes)
   sheetAttributesModView.displayAttributes(model.state.characterInfos.modifiers)
