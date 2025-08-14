@@ -1,12 +1,12 @@
 # DnD Helper
 <table>
   <tr>
-    <td><img src="https://imgur.com/diLg7Gf.png" width=550></td>
-    <td><img src="https://imgur.com/aPM0H8T.png" width=550></td>
+    <td><img src="https://imgur.com/oWeQjje.png" width=550></td>
+    <td><img src="https://imgur.com/RCMusal.png" width=550></td>
   </tr>
   <tr>
-    <td><img src="https://imgur.com/c7DRsh8.png" width=550></td>
-    <td><img src="https://imgur.com/Zaop2ak.png" width=550></td>
+    <td><img src="https://imgur.com/GVCS8H5.png" width=550></td>
+    <td><img src="https://imgur.com/Mch4OH4.png" width=550></td>
   </tr>
 </table>
 
@@ -26,4 +26,5 @@ O objetivo é simplificar a criação de personagens, economizar tempo e permiti
 - JavaScript
 - HTML
 - CSS
-- Parcel
+- Tailwind CSS
+- Vite
