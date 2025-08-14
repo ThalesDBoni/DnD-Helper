@@ -1,7 +1,7 @@
 export const state = {
   characterInfos: {
-    characterClass: '',
-    characterRace: '',
+    characterClass: "",
+    characterRace: "",
     characterLevel: 1,
     characterArchetype: {},
     characterSubrace: {},
@@ -27,35 +27,35 @@ export const state = {
     },
   },
   race: {
-    age: '',
-    speed: '',
-    languages: '',
-    alignment: '',
-    size: '',
-    vision: '',
-    traits: '',
-    asi: '',
+    age: "",
+    speed: "",
+    languages: "",
+    alignment: "",
+    size: "",
+    vision: "",
+    traits: "",
+    asi: "",
   },
   class: {
-    hit_dice: '<b>Hit Dice.</b> ',
-    hp_at_higher_levels: '<b>HP at Higher Levels.</b> ',
-    prof_armor: '<b>Armor Proficiency.</b> ',
-    prof_saving_throws: '<b>Saving Throws Proficiency.</b> ',
-    prof_skills: '<b>Skills Proficiency.</b> ',
-    prof_weapons: '<b>Weapons Proficiency.</b> ',
-    equipment: '<b>Start Equipment.</b> ',
-    table: '',
-    desc: '',
+    hit_dice: "<b>Hit Dice.</b> ",
+    hp_at_higher_levels: "<b>HP at Higher Levels.</b> ",
+    prof_armor: "<b>Armor Proficiency.</b> ",
+    prof_saving_throws: "<b>Saving Throws Proficiency.</b> ",
+    prof_skills: "<b>Skills Proficiency.</b> ",
+    prof_weapons: "<b>Weapons Proficiency.</b> ",
+    equipment: "<b>Start Equipment.</b> ",
+    table: "",
+    desc: "",
   },
   subrace: {
-    name: '',
-    desc: '',
-    asi: '',
-    traits: '',
+    name: "",
+    desc: "",
+    asi: "",
+    traits: "",
   },
   archetype: {
-    name: '',
-    desc: '',
+    name: "",
+    desc: "",
   },
   paths: [],
   subraces: [],
@@ -77,12 +77,12 @@ export async function getDataCharactersInfo() {
 
 export async function getDataClass() {
   try {
-    if (state.characterInfos.characterClass === 'Select class') {
-      throw new Error('You should select a class! 👍')
+    if (state.characterInfos.characterClass === "Select class") {
+      throw new Error("You should select a class! 👍")
     }
 
     const dataClasses = await getData(
-      `classes/${state.characterInfos.characterClass}/`
+      `classes/${state.characterInfos.characterClass}/`,
     )
 
     updateStateClass(dataClasses)
@@ -93,19 +93,18 @@ export async function getDataClass() {
 
 export async function getDataRace() {
   try {
-    if (state.characterInfos.characterRace === 'Select race') {
-      throw new Error('You should select a race! 👍')
+    if (state.characterInfos.characterRace === "Select race") {
+      throw new Error("You should select a race! 👍")
     }
 
     const dataRaces = await getData(
-      `races/${state.characterInfos.characterRace}/`
+      `races/${state.characterInfos.characterRace}/`,
     )
 
     updateStateRace(dataRaces)
   } catch (err) {
     alert(err.message)
   }
-  
 }
 
 export function getCharacterInfo() {
@@ -114,28 +113,28 @@ export function getCharacterInfo() {
   getSubraceInfo()
   getArchetypeInfo()
   state.characterInfos.characterLevel =
-    document.querySelector('.level_selected').value
+    document.querySelector(".level_selected").value
 }
 
 export function getClassInfo() {
   state.characterInfos.characterClass =
-    document.querySelector('.class_selected').value
+    document.querySelector(".class_selected").value
 }
 
 export function getRaceInfo() {
   state.characterInfos.characterRace =
-    document.querySelector('.race_selected').value
+    document.querySelector(".race_selected").value
 }
 
 export function getArchetypeInfo() {
   state.characterInfos.characterArchetype = document.querySelector(
-    '.archetype_selected'
+    ".archetype_selected",
   ).value
 }
 
 export function getSubraceInfo() {
   state.characterInfos.characterSubrace =
-    document.querySelector('.subrace_selected').value
+    document.querySelector(".subrace_selected").value
 }
 
 export function getAttributesNumber() {
@@ -152,7 +151,7 @@ export function getAttributesNumber() {
     return a - b
   })
 
-  if (state.characterInfos.characterClass === 'barbarian') {
+  if (state.characterInfos.characterClass === "barbarian") {
     state.characterInfos.attributes.strength = rolls[5]
     state.characterInfos.attributes.constitution = rolls[4]
     state.characterInfos.attributes.dexterity = rolls[3]
@@ -161,7 +160,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.intelligence = rolls[0]
   }
 
-  if (state.characterInfos.characterClass === 'sorcerer') {
+  if (state.characterInfos.characterClass === "sorcerer") {
     state.characterInfos.attributes.strength = rolls[0]
     state.characterInfos.attributes.dexterity = rolls[1]
     state.characterInfos.attributes.constitution = rolls[3]
@@ -170,7 +169,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[2]
   }
 
-  if (state.characterInfos.characterClass === 'rogue') {
+  if (state.characterInfos.characterClass === "rogue") {
     state.characterInfos.attributes.strength = rolls[2]
     state.characterInfos.attributes.dexterity = rolls[5]
     state.characterInfos.attributes.constitution = rolls[1]
@@ -179,7 +178,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[4]
   }
 
-  if (state.characterInfos.characterClass === 'paladin') {
+  if (state.characterInfos.characterClass === "paladin") {
     state.characterInfos.attributes.strength = rolls[4]
     state.characterInfos.attributes.dexterity = rolls[0]
     state.characterInfos.attributes.constitution = rolls[5]
@@ -188,7 +187,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[1]
   }
 
-  if (state.characterInfos.characterClass === 'bard') {
+  if (state.characterInfos.characterClass === "bard") {
     state.characterInfos.attributes.strength = rolls[0]
     state.characterInfos.attributes.dexterity = rolls[2]
     state.characterInfos.attributes.constitution = rolls[1]
@@ -197,7 +196,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[4]
   }
 
-  if (state.characterInfos.characterClass === 'cleric') {
+  if (state.characterInfos.characterClass === "cleric") {
     state.characterInfos.attributes.strength = rolls[0]
     state.characterInfos.attributes.dexterity = rolls[2]
     state.characterInfos.attributes.constitution = rolls[1]
@@ -206,7 +205,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[4]
   }
 
-  if (state.characterInfos.characterClass === 'druid') {
+  if (state.characterInfos.characterClass === "druid") {
     state.characterInfos.attributes.strength = rolls[0]
     state.characterInfos.attributes.dexterity = rolls[1]
     state.characterInfos.attributes.constitution = rolls[4]
@@ -215,7 +214,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[2]
   }
 
-  if (state.characterInfos.characterClass === 'fighter') {
+  if (state.characterInfos.characterClass === "fighter") {
     state.characterInfos.attributes.strength = rolls[5]
     state.characterInfos.attributes.dexterity = rolls[3]
     state.characterInfos.attributes.constitution = rolls[4]
@@ -224,7 +223,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[2]
   }
 
-  if (state.characterInfos.characterClass === 'monk') {
+  if (state.characterInfos.characterClass === "monk") {
     state.characterInfos.attributes.strength = rolls[0]
     state.characterInfos.attributes.dexterity = rolls[5]
     state.characterInfos.attributes.constitution = rolls[3]
@@ -233,7 +232,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[2]
   }
 
-  if (state.characterInfos.characterClass === 'ranger') {
+  if (state.characterInfos.characterClass === "ranger") {
     state.characterInfos.attributes.strength = rolls[0]
     state.characterInfos.attributes.dexterity = rolls[5]
     state.characterInfos.attributes.constitution = rolls[3]
@@ -242,7 +241,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[2]
   }
 
-  if (state.characterInfos.characterClass === 'warlock') {
+  if (state.characterInfos.characterClass === "warlock") {
     state.characterInfos.attributes.strength = rolls[0]
     state.characterInfos.attributes.dexterity = rolls[1]
     state.characterInfos.attributes.constitution = rolls[4]
@@ -251,7 +250,7 @@ export function getAttributesNumber() {
     state.characterInfos.attributes.charisma = rolls[5]
   }
 
-  if (state.characterInfos.characterClass === 'wizard') {
+  if (state.characterInfos.characterClass === "wizard") {
     state.characterInfos.attributes.strength = rolls[0]
     state.characterInfos.attributes.dexterity = rolls[1]
     state.characterInfos.attributes.constitution = rolls[4]
@@ -262,58 +261,58 @@ export function getAttributesNumber() {
 }
 
 export function updateASIAttributesRace() {
-  state.race.asi.forEach(att => {
-    if (att.attributes[0] === 'Strength') {
+  state.race.asi.forEach((att) => {
+    if (att.attributes[0] === "Strength") {
       state.characterInfos.attributes.strength += att.value
     }
 
-    if (att.attributes[0] === 'Dexterity') {
+    if (att.attributes[0] === "Dexterity") {
       state.characterInfos.attributes.dexterity += att.value
     }
 
-    if (att.attributes[0] === 'Constitution') {
+    if (att.attributes[0] === "Constitution") {
       state.characterInfos.attributes.constitution += att.value
     }
 
-    if (att.attributes[0] === 'Intelligence') {
+    if (att.attributes[0] === "Intelligence") {
       state.characterInfos.attributes.intelligence += att.value
     }
 
-    if (att.attributes[0] === 'Wisdom') {
+    if (att.attributes[0] === "Wisdom") {
       state.characterInfos.attributes.wisdom += att.value
     }
 
-    if (att.attributes[0] === 'Charisma') {
+    if (att.attributes[0] === "Charisma") {
       state.characterInfos.attributes.charisma += att.value
     }
   })
 }
 
 export function updateASIAttributesSubrace() {
-  if (state.characterInfos.characterSubrace === 'No Options') return
+  if (state.characterInfos.characterSubrace === "No Options") return
 
-  state.subrace.asi.forEach(att => {
-    if (att.attributes[0] === 'Strength') {
+  state.subrace.asi.forEach((att) => {
+    if (att.attributes[0] === "Strength") {
       state.characterInfos.attributes.strength += att.value
     }
 
-    if (att.attributes[0] === 'Dexterity') {
+    if (att.attributes[0] === "Dexterity") {
       state.characterInfos.attributes.dexterity += att.value
     }
 
-    if (att.attributes[0] === 'Constitution') {
+    if (att.attributes[0] === "Constitution") {
       state.characterInfos.attributes.constitution += att.value
     }
 
-    if (att.attributes[0] === 'Intelligence') {
+    if (att.attributes[0] === "Intelligence") {
       state.characterInfos.attributes.intelligence += att.value
     }
 
-    if (att.attributes[0] === 'Wisdom') {
+    if (att.attributes[0] === "Wisdom") {
       state.characterInfos.attributes.wisdom += att.value
     }
 
-    if (att.attributes[0] === 'Charisma') {
+    if (att.attributes[0] === "Charisma") {
       state.characterInfos.attributes.charisma += att.value
     }
   })
@@ -321,22 +320,22 @@ export function updateASIAttributesSubrace() {
 
 export function updateStateModifiers() {
   state.characterInfos.modifiers.strength = Math.floor(
-    (state.characterInfos.attributes.strength - 10) / 2
+    (state.characterInfos.attributes.strength - 10) / 2,
   )
   state.characterInfos.modifiers.dexterity = Math.floor(
-    (state.characterInfos.attributes.dexterity - 10) / 2
+    (state.characterInfos.attributes.dexterity - 10) / 2,
   )
   state.characterInfos.modifiers.constitution = Math.floor(
-    (state.characterInfos.attributes.constitution - 10) / 2
+    (state.characterInfos.attributes.constitution - 10) / 2,
   )
   state.characterInfos.modifiers.intelligence = Math.floor(
-    (state.characterInfos.attributes.intelligence - 10) / 2
+    (state.characterInfos.attributes.intelligence - 10) / 2,
   )
   state.characterInfos.modifiers.wisdom = Math.floor(
-    (state.characterInfos.attributes.wisdom - 10) / 2
+    (state.characterInfos.attributes.wisdom - 10) / 2,
   )
   state.characterInfos.modifiers.charisma = Math.floor(
-    (state.characterInfos.attributes.charisma - 10) / 2
+    (state.characterInfos.attributes.charisma - 10) / 2,
   )
 }
 
@@ -349,13 +348,13 @@ export function updateSheetInfo() {
 }
 
 function lifeAndPBCalculator(data) {
-  const level = document.querySelector('.level_selected').value
+  const level = document.querySelector(".level_selected").value
 
   // Prof Bonus
   state.characterInfos.attributes.profBonus = Math.floor(2 + (level - 1) / 4)
 
   // Life
-  if (data === '<b>Hit Dice.</b> 1d12') {
+  if (data === "<b>Hit Dice.</b> 1d12") {
     state.characterInfos.attributes.life =
       12 + state.characterInfos.modifiers.constitution
 
@@ -367,7 +366,7 @@ function lifeAndPBCalculator(data) {
     }
   }
 
-  if (data === '<b>Hit Dice.</b> 1d10') {
+  if (data === "<b>Hit Dice.</b> 1d10") {
     state.characterInfos.attributes.life =
       10 + state.characterInfos.modifiers.constitution
 
@@ -379,7 +378,7 @@ function lifeAndPBCalculator(data) {
     }
   }
 
-  if (data === '<b>Hit Dice.</b> 1d8') {
+  if (data === "<b>Hit Dice.</b> 1d8") {
     state.characterInfos.attributes.life =
       8 + state.characterInfos.modifiers.constitution
 
@@ -391,7 +390,7 @@ function lifeAndPBCalculator(data) {
     }
   }
 
-  if (data === '<b>Hit Dice.</b> 1d6') {
+  if (data === "<b>Hit Dice.</b> 1d6") {
     state.characterInfos.attributes.life =
       6 + state.characterInfos.modifiers.constitution
 
@@ -419,14 +418,14 @@ function updateStateRace(data) {
 }
 
 function updateStateSubrace(data) {
-  if (state.characterInfos.characterSubrace === 'No Options') {
-    state.subrace.name = ''
-    state.subrace.desc = ''
-    state.subrace.asi_desc = ''
-    state.subrace.traits = ''
+  if (state.characterInfos.characterSubrace === "No Options") {
+    state.subrace.name = ""
+    state.subrace.desc = ""
+    state.subrace.asi_desc = ""
+    state.subrace.traits = ""
   }
 
-  data.forEach(sub => {
+  data.forEach((sub) => {
     if (sub.name === state.characterInfos.characterSubrace) {
       state.subrace.name = sub.name
       state.subrace.desc = sub.desc
@@ -437,7 +436,7 @@ function updateStateSubrace(data) {
 }
 
 function updateStateArchetype(data) {
-  data.forEach(arch => {
+  data.forEach((arch) => {
     if (arch.name === state.characterInfos.characterArchetype) {
       state.archetype.name = arch.name
       state.archetype.desc = arch.desc
@@ -464,15 +463,15 @@ function updateStateClass(data) {
 
 function clearStateClass() {
   state.class = {
-    hit_dice: '<b>Hit Dice.</b> ',
-    hp_at_higher_levels: '<b>HP at Higher Levels.</b> ',
-    prof_armor: '<b>Armor Proficiency.</b> ',
-    prof_saving_throws: '<b>Saving Throws Proficiency.</b> ',
-    prof_skills: '<b>Skills Proficiency.</b> ',
-    prof_weapons: '<b>Weapons Proficiency.</b> ',
-    equipment: '<b>Start Equipment.</b> ',
-    table: '',
-    desc: '',
+    hit_dice: "<b>Hit Dice.</b> ",
+    hp_at_higher_levels: "<b>HP at Higher Levels.</b> ",
+    prof_armor: "<b>Armor Proficiency.</b> ",
+    prof_saving_throws: "<b>Saving Throws Proficiency.</b> ",
+    prof_skills: "<b>Skills Proficiency.</b> ",
+    prof_weapons: "<b>Weapons Proficiency.</b> ",
+    equipment: "<b>Start Equipment.</b> ",
+    table: "",
+    desc: "",
   }
 }
 

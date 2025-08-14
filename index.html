@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,36 +12,59 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./src/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+      href="./src/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link href="src/output.css" rel="stylesheet" />
     <script type="module" src="/src/js/controller.js"></script>
   </head>
-  <body>
-    <div class="page">
+  <body class="bg-stone-200 font-[Rubik] text-base text-zinc-900">
+    <div class="flex flex-col items-center gap-8 p-4">
       <header>
-        <h1 class="">DnD Helper</h1>
+        <h1 class="mb-4 text-5xl font-bold text-red-600">DnD Helper</h1>
       </header>
 
-      <main>
-        <div class="instructions">
-          <h2 class="title">Instructions</h2>
-          <ol class="instructions-list">
-            <li>Select the level, class and race.</li>
-            <li>Select an archetype and subrace.</li>
-            <li>Click generate</li>
+      <main class="flex max-w-xl flex-col gap-8">
+        <div class="mb-5 flex flex-col items-center">
+          <h2 class="mb-4 text-2xl font-bold text-red-600">Instructions</h2>
+          <ol class="pl-6">
+            <li>1. Select the level, class and race.</li>
+            <li>2. Select an archetype and subrace.</li>
+            <li>3. Click generate</li>
             <li>
-              The system will roll the dice and organize your character's
+              4. The system will roll the dice and organize your character's
               attributes for you.
             </li>
           </ol>
         </div>
 
-        <div class="sheet__infos-to-generate">
-          <h2 class="title">Character info</h2>
-          <form class="character-infos-form">
-            <div class="sheet__info-all">
-              <div class="attribute-info sheet__info-level">
+        <div class="flex flex-col items-center">
+          <h2 class="mb-4 text-2xl font-bold text-red-600">Character info</h2>
+          <form class="flex justify-center text-base">
+            <div class="flex flex-col justify-between gap-2">
+              <div class="sheet__info-level flex justify-between gap-4">
                 <label for="sheet-level">Level:</label>
-                <select class="level_selected" id="sheet-level">
+                <select
+                  class="level_selected rounded-4xl border bg-zinc-300 pl-0.5"
+                  id="sheet-level"
+                >
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -65,9 +88,12 @@
                 </select>
               </div>
 
-              <div class="attribute-info sheet__info-class">
+              <div class="sheet__info-class flex justify-between gap-4">
                 <label for="class-select">Class: </label>
-                <select class="class_selected" id="class-select">
+                <select
+                  class="class_selected rounded-4xl border bg-zinc-300 pl-0.5"
+                  id="class-select"
+                >
                   <option disabled selected>Select class</option>
                   <option value="barbarian">Barbarian</option>
                   <option value="bard">Bard</option>
@@ -84,9 +110,12 @@
                 </select>
               </div>
 
-              <div class="attribute-info sheet__info-race">
+              <div class="sheet__info-race flex justify-between gap-4">
                 <label for="race-select">Race: </label>
-                <select class="race_selected" id="race-select">
+                <select
+                  class="race_selected rounded-4xl border bg-zinc-300 pl-0.5"
+                  id="race-select"
+                >
                   <option disabled selected>Select race</option>
                   <option value="alseid">Alseid</option>
                   <option value="catfolk">Catfolk</option>
@@ -111,67 +140,78 @@
                 </select>
               </div>
 
-              <div class="attribute-info sheet__info-archetype">
+              <div class="sheet__info-archetype flex justify-between gap-4">
                 <label for="archetype-select">Archetype: </label>
-                <select class="archetype_selected" id="archetype-select">
+                <select
+                  class="archetype_selected rounded-4xl border bg-zinc-300 pl-0.5"
+                  id="archetype-select"
+                >
                   <option disabled selected>Select a class first</option>
                 </select>
               </div>
 
-              <div class="attribute-info sheet__info-subrace">
+              <div class="sheet__info-subrace flex justify-between gap-4">
                 <label for="subrace-select">Subrace: </label>
-                <select class="subrace_selected" id="subrace-select">
+                <select
+                  class="subrace_selected rounded-4xl border bg-zinc-300 pl-0.5"
+                  id="subrace-select"
+                >
                   <option disabled selected>Select a race first</option>
                 </select>
               </div>
             </div>
           </form>
 
-          <div class="button">
-            <button>Generate</button>
+          <div class="button mt-8 flex items-center justify-center">
+            <button
+              class="cursor-pointer rounded-xl border-none bg-red-500 px-3 py-2 text-xl text-white"
+            >
+              Generate
+            </button>
           </div>
         </div>
 
         <div class="sheet__data">
-          <h2 class="title">Sheet</h2>
-          <div class="data">
-            <div class="attributes">
-              <div class="att">
+          <h2 class="text-2xl font-bold text-red-600">Sheet</h2>
+          <div class="flex gap-8">
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2">
                 <span><b>Strength: </b></span>
                 <span class="sheet__data-strength"> -- </span>
                 <div>
-                  <b>Mod:</b> <span class="sheet__data-strength-mod"></span>
+                  <b>Mod:</b>
+                  <span class="sheet__data-strength-mod"></span>
                 </div>
               </div>
-              <div class="att">
+              <div class="flex gap-2">
                 <span><b>Dexterity: </b></span>
                 <span class="sheet__data-dexterity"> -- </span>
                 <div>
                   <b>Mod:</b><span class="sheet__data-dexterity-mod"></span>
                 </div>
               </div>
-              <div class="att">
+              <div class="flex gap-2">
                 <span><b>Constitution: </b></span>
                 <span class="sheet__data-constitution"> -- </span>
                 <div>
                   <b>Mod:</b><span class="sheet__data-constitution-mod"></span>
                 </div>
               </div>
-              <div class="att">
+              <div class="flex gap-2">
                 <span><b>Intelligence: </b></span>
                 <span class="sheet__data-intelligence"> -- </span>
                 <div>
                   <b>Mod:</b><span class="sheet__data-intelligence-mod"></span>
                 </div>
               </div>
-              <div class="att">
+              <div class="flex gap-2">
                 <span><b>Wisdom: </b></span>
                 <span class="sheet__data-wisdom"> -- </span>
                 <div>
                   <b>Mod:</b><span class="sheet__data-wisdom-mod"></span>
                 </div>
               </div>
-              <div class="att">
+              <div class="flex gap-2">
                 <span><b>Charisma: </b></span>
                 <span class="sheet__data-charisma"> -- </span>
                 <div>
@@ -180,7 +220,7 @@
               </div>
             </div>
 
-            <div class="all">
+            <div class="flex flex-col justify-between">
               <div>
                 <span><b>CA:</b></span>
                 <span class="ca"></span>
@@ -204,19 +244,19 @@
           </div>
         </div>
 
-        <div class="sheet__race-and-sub">
-          <h2 class="title">Race</h2>
+        <div class="sheet__race-and-sub flex flex-col gap-8">
+          <h2 class="text-2xl font-bold text-red-600">Race</h2>
 
-          <div class="sheet__race"></div>
+          <div class="sheet__race flex flex-col gap-2.5"></div>
 
-          <div class="sheet_subrace"></div>
+          <div class="sheet_subrace mb-8 flex flex-col gap-2.5"></div>
         </div>
 
-        <h2 class="title">Class</h2>
+        <h2 class="text-2xl font-bold text-red-600">Class</h2>
 
-        <div class="class"></div>
+        <div class="class flex flex-col gap-0"></div>
 
-        <div class="archetypes"></div>
+        <div class="archetypes prose-h5:font-bold prose-h5:text-xl"></div>
       </main>
     </div>
   </body>
