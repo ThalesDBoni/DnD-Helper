@@ -6,13 +6,16 @@
     "dev": "vite",
     "start": "vite --port 1234 --open",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tailwind": "pnpx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
     "marked": "^13.0.2",
-    "regenerator-runtime": "^0.14.1"
+    "regenerator-runtime": "^0.14.1",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "vite": "^7.1.2"
