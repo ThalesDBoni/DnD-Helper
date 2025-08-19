@@ -1,11 +1,16 @@
-import { marked } from "marked"
-import View from "./view.js"
+import { marked } from 'marked'
+import View from './view.js'
+
+const el = document.querySelector('.infos')
 
 class ClassView extends View {
-  _parentElement = document.querySelector(".class")
+  _parentElement = document.querySelector('.class')
 
   _generateMarkup(data) {
+    el.classList.remove('hidden')
+
     return `
+      <h2 class="text-2xl font-bold text-red-600">Class</h2>
       <span class="">${marked.parse(data.hit_dice)}</span>
       <span class="">${marked.parse(data.hp_at_higher_levels)}</span>
       <span class="">${marked.parse(data.prof_armor)}</span>

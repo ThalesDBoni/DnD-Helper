@@ -1,4 +1,4 @@
-import View from "./view";
+import View from './view'
 
 class sheetAttributesView extends View {
   _strength = document.querySelector('.sheet__data-strength')
@@ -21,7 +21,7 @@ class sheetAttributesView extends View {
     this._charisma.textContent = data.charisma
     this._ca.textContent = data.ca
     this._life.textContent = data.life
-    this._initiative.textContent = data.initiative
+    this._initiative.textContent = `${data.initiative >= 0 ? '+' : '-'} ${data.initiative}`
     this._bonusProf.textContent = data.profBonus
   }
 }

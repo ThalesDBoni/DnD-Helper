@@ -8,6 +8,7 @@ class RaceView extends View {
 
   _generateMarkup(data) {
     return `
+      <h2 class="text-2xl font-bold text-red-600">Race</h2>
       <span>${marked.parse(data.age)}</span>
       <span>${marked.parse(data.speed)}</span>
       <span>${marked.parse(data.size)}</span>
