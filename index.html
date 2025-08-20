@@ -8,7 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
 
@@ -36,249 +43,300 @@
     <script type="module" src="/src/js/controller.js"></script>
   </head>
   <body
-    class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 font-[Rubik] text-base text-zinc-900"
+    class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 font-[Inter] text-base text-slate-300"
   >
     <div class="flex flex-col items-center gap-8 p-4">
-      <header>
-        <h1 class="mb-4 text-5xl font-bold text-red-600 text-center">
+      <header class="text-center">
+        <h1
+          class="mb-4 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text font-[Cinzel] text-5xl font-bold text-transparent"
+        >
           DnD Helper
         </h1>
-        <p>
+        <p class="max-w-2xl text-slate-300">
           Create your perfect D&D 5e character with our intelligent generator.
-          Roll the dice and let fate decide your hero's destiny.
+          Roll the dice and let fate decide your
+          <span class="line-through">villain's</span> hero's destiny.
         </p>
       </header>
 
-      <main class="flex w-7xl justify-start flex-col items-center">
-        <div class="flex gap-14 mb-14">
+      <main class="flex flex-col items-center justify-start">
+        <div class="mb-14 flex flex-col gap-6 lg:flex-row">
           <div
-            class="flex flex-col items-start border-[1px] bg-slate-800/50 shadow-md shadow-black border-zinc-900 rounded-2xl p-6 w-xl"
+            class="flex w-[22.5rem] flex-col items-start rounded-2xl border-[1px] border-zinc-900 bg-slate-800/50 p-6 shadow-md shadow-black sm:w-xl"
           >
-            <h2 class="mb-4 text-2xl font-bold text-red-600">
-              Character Creation
-            </h2>
-            <form class="flex justify-center text-base">
-              <div class="grid grid-cols-2 gap-2">
-                <div class="sheet__info-level flex flex-col gap-2">
-                  <label for="sheet-level">Level</label>
-                  <select
-                    class="level_selected rounded-lg py-2 px-1 border w-12 bg-zinc-300 pl-0.5"
-                    id="sheet-level"
-                  >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                  </select>
-                </div>
+            <div>
+              <h2 class="mb-3 flex gap-2 text-lg font-bold text-amber-400">
+                <i data-lucide="sparkles"></i>
+                Character Creation
+              </h2>
+              <form class="flex justify-center text-sm">
+                <div class="flex flex-col gap-y-6 sm:grid sm:grid-cols-2">
+                  <div class="sheet__info-level flex flex-col">
+                    <label for="sheet-level" class="text-sm">Level</label>
+                    <select
+                      class="level_selected w-12 rounded-lg border border-slate-600 bg-slate-700 px-1 py-2 pl-0.5 text-white"
+                      id="sheet-level"
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                    </select>
+                  </div>
 
-                <div class="sheet__info-class flex flex-col gap-2">
-                  <label for="class-select">Class </label>
-                  <select
-                    class="class_selected rounded-lg py-2 px-1 border bg-zinc-300 w-30 pl-0.5"
-                    id="class-select"
-                  >
-                    <option disabled selected>Select class</option>
-                    <option value="barbarian">Barbarian</option>
-                    <option value="bard">Bard</option>
-                    <option value="cleric">Cleric</option>
-                    <option value="druid">Druid</option>
-                    <option value="fighter">Fighter</option>
-                    <option value="monk">Monk</option>
-                    <option value="paladin">Paladin</option>
-                    <option value="ranger">Ranger</option>
-                    <option value="rogue">Rogue</option>
-                    <option value="sorcerer">Sorcerer</option>
-                    <option value="warlock">Warlock</option>
-                    <option value="wizard">Wizard</option>
-                  </select>
-                </div>
+                  <div class="sheet__info-class flex flex-col">
+                    <label for="class-select">Class </label>
+                    <select
+                      class="class_selected w-30 rounded-lg border border-slate-600 bg-slate-700 px-1 py-2 pl-0.5 text-white"
+                      id="class-select"
+                    >
+                      <option disabled selected>Select class</option>
+                      <option value="barbarian">Barbarian</option>
+                      <option value="bard">Bard</option>
+                      <option value="cleric">Cleric</option>
+                      <option value="druid">Druid</option>
+                      <option value="fighter">Fighter</option>
+                      <option value="monk">Monk</option>
+                      <option value="paladin">Paladin</option>
+                      <option value="ranger">Ranger</option>
+                      <option value="rogue">Rogue</option>
+                      <option value="sorcerer">Sorcerer</option>
+                      <option value="warlock">Warlock</option>
+                      <option value="wizard">Wizard</option>
+                    </select>
+                  </div>
 
-                <div class="sheet__info-race flex flex-col gap-2">
-                  <label for="race-select">Race</label>
-                  <select
-                    class="race_selected rounded-lg py-2 px-1 border w-36 bg-zinc-300 pl-0.5"
-                    id="race-select"
-                  >
-                    <option disabled selected>Select race</option>
-                    <option value="alseid">Alseid</option>
-                    <option value="catfolk">Catfolk</option>
-                    <option value="darakhul">Darakhul</option>
-                    <option value="derro">Derro</option>
-                    <option value="dragonborn">Dragonborn</option>
-                    <option value="drow">Drow</option>
-                    <option value="dwarf">Dwarf</option>
-                    <option value="elf">Elf</option>
-                    <option value="erina">Erina</option>
-                    <option value="gearforged">Gearforged</option>
-                    <option value="gnome">Gnome</option>
-                    <option value="half-elf">Half-Elf</option>
-                    <option value="half-orc">Half-Orc</option>
-                    <option value="halfling">Halfling</option>
-                    <option value="human">Human</option>
-                    <option value="minotaur">Minotaur</option>
-                    <option value="mushroomfolk">Mushroomfolk</option>
-                    <option value="satarre">Satare</option>
-                    <option value="shade">Shade</option>
-                    <option value="shade">Tiefling</option>
-                  </select>
-                </div>
+                  <div class="sheet__info-race flex flex-col">
+                    <label for="race-select">Race</label>
+                    <select
+                      class="race_selected w-36 rounded-lg border border-slate-600 bg-slate-700 px-1 py-2 pl-0.5 text-white"
+                      id="race-select"
+                    >
+                      <option disabled selected>Select race</option>
+                      <option value="alseid">Alseid</option>
+                      <option value="catfolk">Catfolk</option>
+                      <option value="darakhul">Darakhul</option>
+                      <option value="derro">Derro</option>
+                      <option value="dragonborn">Dragonborn</option>
+                      <option value="drow">Drow</option>
+                      <option value="dwarf">Dwarf</option>
+                      <option value="elf">Elf</option>
+                      <option value="erina">Erina</option>
+                      <option value="gearforged">Gearforged</option>
+                      <option value="gnome">Gnome</option>
+                      <option value="half-elf">Half-Elf</option>
+                      <option value="half-orc">Half-Orc</option>
+                      <option value="halfling">Halfling</option>
+                      <option value="human">Human</option>
+                      <option value="minotaur">Minotaur</option>
+                      <option value="mushroomfolk">Mushroomfolk</option>
+                      <option value="satarre">Satare</option>
+                      <option value="shade">Shade</option>
+                      <option value="shade">Tiefling</option>
+                    </select>
+                  </div>
 
-                <div class="sheet__info-archetype flex flex-col gap-2">
-                  <label for="archetype-select">Archetype</label>
-                  <select
-                    class="archetype_selected rounded-lg py-2 px-1 border w-64 bg-zinc-300 pl-0.5"
-                    id="archetype-select"
-                  >
-                    <option disabled selected>Select a class first</option>
-                  </select>
-                </div>
+                  <div class="sheet__info-archetype flex flex-col">
+                    <label for="archetype-select">Archetype</label>
+                    <select
+                      class="archetype_selected w-64 rounded-lg border border-slate-600 bg-slate-700 px-1 py-2 pl-0.5 text-white"
+                      id="archetype-select"
+                    >
+                      <option disabled selected>Select a class first</option>
+                    </select>
+                  </div>
 
-                <div class="sheet__info-subrace flex flex-col gap-2">
-                  <label for="subrace-select">Subrace</label>
-                  <select
-                    class="subrace_selected rounded-lg py-2 px-1 border w-52 bg-zinc-300 pl-0.5"
-                    id="subrace-select"
-                  >
-                    <option disabled selected>Select a race first</option>
-                  </select>
+                  <div class="sheet__info-subrace flex flex-col">
+                    <label for="subrace-select">Subrace</label>
+                    <select
+                      class="subrace_selected w-52 rounded-lg border border-slate-600 bg-slate-700 px-1 py-2 pl-0.5 text-white"
+                      id="subrace-select"
+                    >
+                      <option disabled selected>Select a race first</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
 
-            <div class="button mt-8 flex items-center justify-center w-full">
+            <div class="button mt-8 flex w-full items-center justify-center">
               <button
-                class="cursor-pointer rounded-xl border-none bg-red-500 px-3 py-2 text-xl text-white w-full"
+                class="flex w-full cursor-pointer items-center justify-center gap-3 rounded-lg border-none bg-gradient-to-r from-amber-600 to-amber-500 px-3 py-2 text-xl font-semibold text-white hover:to-amber-600"
               >
-                Generate
+                <i data-lucide="dice6" class="w-5"></i>
+                Generate Character
               </button>
             </div>
           </div>
 
           <div
-            class="sheet__data flex flex-col items-start border-[1px] bg-slate-800/50 shadow-md shadow-black border-zinc-900 rounded-2xl p-6 w-xl"
+            class="sheet__data opacity-0 flex flex-col items-start rounded-2xl border-[1px] border-zinc-900 bg-slate-800/50 p-6 shadow-md shadow-black xl:w-xl"
           >
-            <h2 class="text-2xl font-bold text-red-600 text-center">Sheet</h2>
-            <div class="flex flex-col gap-8 w-full">
+            <h2 class="mb-3 flex gap-3 text-lg font-bold text-amber-400">
+              <i data-lucide="shield"></i>
+              Sheet
+            </h2>
+            <div class="flex w-full flex-col gap-8">
               <div class="flex flex-row justify-between gap-2">
                 <div
-                  class="w-full h-20 bg-red-950/30 flex flex-col items-center justify-center border-2 border-red-600 rounded-2xl"
+                  class="flex h-21 w-full flex-col items-center justify-center rounded-2xl border-2 border-red-600 bg-red-950/30 py-1"
                 >
-                  <span class="text-red-300">Hit Points</span>
-                  <span class="life text-red-200"></span>
+                  <span class="flex flex-col items-center text-red-300">
+                    Hit Points
+                  </span>
+                  <span class="life text-xl font-bold text-red-200"></span>
                 </div>
 
                 <div
-                  class="w-full h-20 bg-blue-950/30 flex flex-col items-center justify-center border-2 border-blue-600 rounded-2xl"
+                  class="flex h-20 w-full flex-col items-center justify-center rounded-2xl border-2 border-blue-600 bg-blue-950/30"
                 >
-                  <span class="text-blue-300">Armor Class</span>
-                  <span class="ca text-blue-200"></span>
+                  <span class="text-center text-blue-300">Armor</span>
+                  <span class="ca text-xl font-bold text-blue-200"></span>
                 </div>
 
                 <div
-                  class="w-full h-20 bg-green-950/30 flex flex-col items-center justify-center border-2 border-green-600 rounded-2xl"
+                  class="flex h-20 w-full flex-col items-center justify-center rounded-2xl border-2 border-green-600 bg-green-950/30"
                 >
-                  <span class="text-green-300">Initiative</span>
-                  <span class="initiative text-green-100"></span>
+                  <span class="text-center text-green-300">Initiative</span>
+                  <span
+                    class="initiative text-xl font-bold text-green-100"
+                  ></span>
                 </div>
               </div>
 
               <div>
-                <h2 class="text-2xl font-bold text-red-600">Ability Scores</h2>
+                <h2
+                  class="mb-3 font-[Cinzel] text-lg font-semibold text-amber-400"
+                >
+                  Ability Scores
+                </h2>
                 <div class="grid grid-cols-2 gap-4">
                   <div
-                    class="flex flex-col gap-2 p-4 h-28 bg-gradient-to-br from-amber-50 to-amber-100  rounded-2xl border border-amber-200"
+                    class="flex h-28 flex-col gap-2 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-amber-100 p-4"
                   >
-                    <span>Strength</span>
+                    <span class="flex gap-3 text-sm font-medium text-amber-900"
+                      ><i data-lucide="sword" class="w-4"></i>Strength</span
+                    >
                     <div class="flex gap-2">
-                      <span class="sheet__data-strength text-2xl"></span>
-                      <span class="sheet__data-strength-mod"></span>
+                      <span
+                        class="sheet__data-strength text-2xl font-bold text-amber-900"
+                      ></span>
+                      <span class="sheet__data-strength-mod text-black"></span>
                     </div>
                   </div>
 
                   <div
-                    class="flex flex-col gap-2 bg-gradient-to-br from-amber-50 to-amber-100 p-4 h-28 rounded-2xl border border-amber-200"
+                    class="flex h-28 flex-col gap-2 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-amber-100 p-4"
                   >
-                    <span>Dexterity</span>
+                    <span class="flex gap-3 text-sm font-medium text-amber-900">
+                      <i data-lucide="zap" class="w-4"></i>Dexterity</span
+                    >
                     <div class="flex gap-2">
-                      <span class="sheet__data-dexterity text-2xl"></span>
-                      <span class="sheet__data-dexterity-mod"></span>
+                      <span
+                        class="sheet__data-dexterity text-2xl font-bold text-amber-900"
+                      ></span>
+                      <span class="sheet__data-dexterity-mod text-black"></span>
                     </div>
                   </div>
 
                   <div
-                    class="flex flex-col gap-2 bg-gradient-to-br from-amber-50 to-amber-100 p-4 h-28 rounded-2xl border border-amber-200"
+                    class="flex h-28 flex-col gap-2 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-amber-100 p-4"
                   >
-                    <span>Constitution</span>
+                    <span class="flex gap-3 text-sm font-medium text-amber-900">
+                      <i data-lucide="heart" class="w-4"></i>Constitution</span
+                    >
                     <div class="flex gap-2">
-                      <span class="sheet__data-constitution text-2xl"></span>
-                      <span class="sheet__data-constitution-mod"></span>
+                      <span
+                        class="sheet__data-constitution text-2xl font-bold text-amber-900"
+                      ></span>
+                      <span
+                        class="sheet__data-constitution-mod text-black"
+                      ></span>
                     </div>
                   </div>
 
                   <div
-                    class="flex flex-col gap-2 h-28 bg-gradient-to-br from-amber-50 to-amber-100 p-4 rounded-2xl border border-amber-200"
+                    class="flex h-28 flex-col gap-2 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-amber-100 p-4"
                   >
-                    <span>Intelligence</span>
+                    <span class="flex gap-3 text-sm font-medium text-amber-900">
+                      <i data-lucide="brain" class="w-4"></i>Intelligence</span
+                    >
                     <div class="flex gap-2">
-                      <span class="sheet__data-intelligence text-2xl"></span>
-                      <span class="sheet__data-intelligence-mod"></span>
+                      <span
+                        class="sheet__data-intelligence text-2xl font-bold text-amber-900"
+                      ></span>
+                      <span
+                        class="sheet__data-intelligence-mod text-black"
+                      ></span>
                     </div>
                   </div>
 
                   <div
-                    class="flex flex-col gap-2 h-28 bg-gradient-to-br from-amber-50 to-amber-100 p-4 rounded-2xl border border-amber-200"
+                    class="flex h-28 flex-col gap-2 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-amber-100 p-4"
                   >
-                    <span>Wisdom</span>
+                    <span class="flex gap-3 text-sm font-medium text-amber-900">
+                      <i data-lucide="eye" class="w-4"></i>Wisdom</span
+                    >
                     <div class="flex gap-2">
-                      <span class="sheet__data-wisdom text-2xl"></span>
-                      <span class="sheet__data-wisdom-mod"></span>
+                      <span
+                        class="sheet__data-wisdom text-2xl font-bold text-amber-900"
+                      ></span>
+                      <span class="sheet__data-wisdom-mod text-black"></span>
                     </div>
                   </div>
 
                   <div
-                    class="flex flex-col gap-2 h-28 bg-gradient-to-br from-amber-50 to-amber-100 p-4 rounded-2xl border border-amber-200"
+                    class="flex h-28 flex-col gap-2 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-amber-100 p-4"
                   >
-                    <span>Charisma</span>
+                    <span class="flex gap-3 text-sm font-medium text-amber-900">
+                      <i data-lucide="sparkles" class="w-4"></i>Charisma</span
+                    >
                     <div class="flex gap-2">
-                      <span class="sheet__data-charisma text-2xl"></span>
-                      <span class="sheet__data-charisma-mod"></span>
+                      <span
+                        class="sheet__data-charisma text-2xl font-bold text-amber-900"
+                      ></span>
+                      <span class="sheet__data-charisma-mod text-black"></span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div>
-                <span>Proficience Bonus</span>
-                <span class="bonus-prof"></span>
+              <div
+                class="flex flex-row items-center justify-center gap-4 rounded-lg border border-amber-800 bg-amber-950/30 p-3 text-center"
+              >
+                <span class="text-sm text-amber-300">Proficiency Bonus</span>
+                <span
+                  class="bonus-prof text-xl font-bold text-amber-100"
+                ></span>
               </div>
             </div>
           </div>
         </div>
 
         <div
-          class="infos hidden flex flex-col justify-center w-xl border-[1px] bg-slate-800/50 shadow-md shadow-black border-zinc-900 rounded-2xl p-6"
+          class="infos flex hidden w-[22.5rem] flex-col justify-center rounded-2xl border-[1px] border-zinc-900 bg-slate-800/50 p-6 shadow-md shadow-black sm:w-xl md:w-2xl"
         >
-          <h2 class="text-2xl font-bold text-red-600 mb-4">
+          <h2 class="mb-3 flex gap-3 text-lg font-bold text-amber-400">
+            <i data-lucide="paperclip"></i>
             Character features and habilities
           </h2>
-          <div class="sheet__race-and-sub flex flex-col gap-8 items-center">
+          <div class="sheet__race-and-sub flex flex-col items-center gap-8">
             <div class="sheet__race flex flex-col gap-2.5"></div>
             <div class="sheet_subrace mb-8 flex flex-col gap-2.5"></div>
           </div>
@@ -289,5 +347,9 @@
         </div>
       </main>
     </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons()
+    </script>
   </body>
 </html>

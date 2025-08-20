@@ -7,11 +7,11 @@ class SubraceView extends View {
   _generateMarkup(data) {
     const subraceData = data
     let markup = `
-    <h2 class="text-red-600 font-bold text-2xl">Subrace</h2>
+    <h2 class="text-amber-400 font-[Cinzel] font-bold text-2xl">Subrace</h2>
     <div class="flex flex-col gap-2.5">
-      <span class="text-xl text-red-600"><b>${marked.parse(data.name)}</b></span>
-      <span>${marked.parse(data.desc)}</span>
-      <span>${marked.parse(data.traits)}</span>
+      <span class="text-lg font-bold text-amber-400"><b>${marked.parse(data.name)}</b></span>
+      <span class="mb-2">${marked.parse(data.desc)}</span>
+      <span class="prose-p:mb-2">${marked.parse(data.traits)}</span>
     </div>
     `
 
