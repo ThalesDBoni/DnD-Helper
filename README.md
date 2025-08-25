@@ -1,12 +1,12 @@
 # DnD Helper
 <table>
   <tr>
-    <td><img src="https://imgur.com/oWeQjje.png" width=550></td>
-    <td><img src="https://imgur.com/RCMusal.png" width=550></td>
+    <td><img src="https://imgur.com/PrBymNX.png" width=550></td>
+    <td><img src="https://imgur.com/lQgM3nv.png" width=550></td>
   </tr>
   <tr>
-    <td><img src="https://imgur.com/GVCS8H5.png" width=550></td>
-    <td><img src="https://imgur.com/Mch4OH4.png" width=550></td>
+    <td><img src="https://imgur.com/mAog1QO.png" width=550></td>
+    <td><img src="https://imgur.com/apYTUbT.png" width=550></td>
   </tr>
 </table>
 
